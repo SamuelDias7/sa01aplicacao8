@@ -1,13 +1,15 @@
 //definição do pacote
 package br.com.senaitagua.sa1.app8;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //importação do pacote swing
 import javax.swing.*;
 
 //Como que é a herança em Java?
 //herdando a classe JFrame
-public class TelaAposentadoria extends JFrame{ //herança
+public class TelaAposentadoria extends JFrame implements ActionListener{ //herança
 	//Definindo um componente swing título
 	JLabel titulo;
 	//Definindo componentes swing -botões
@@ -35,6 +37,15 @@ public class TelaAposentadoria extends JFrame{ //herança
 		getContentPane().add(btnLer);
 		getContentPane().add(btnLimpar);
 		setSize(800,600);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource().equals("btnGravar")) {
+			JOptionPane.showMessageDialog(null, "Gravando arquivo...");
+		}
 		
 	}
 	
